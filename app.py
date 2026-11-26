@@ -1,4 +1,5 @@
 """Streamlit entry point for the original offline Smart Classroom interface."""
+from pathlib import Path
 import streamlit as st
 
 st.set_page_config(page_title="Умный кабинет информатики", page_icon="🏫", layout="wide")
@@ -9,4 +10,4 @@ st.title("🏫 Умный кабинет информатики")
 st.caption("Автономная версия сайта в Streamlit")
 st.info("По умолчанию сайт работает в режиме симуляции. Связь с ESP32 и LCD требует совместимой прошивки и отдельной проверки.")
 st.markdown('[Открыть сайт на весь экран (в том числе для USB)](app/static/index.html)')
-st.iframe('/app/static/index.html', height=1800, alt='Панель умного кабинета')
+st.iframe(Path(__file__).parent / 'static' / 'index.html', height=1800, alt='Панель умного кабинета')
